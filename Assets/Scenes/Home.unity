@@ -135,9 +135,8 @@ GameObject:
   - component: {fileID: 46753428}
   - component: {fileID: 46753427}
   - component: {fileID: 46753426}
-  - component: {fileID: 46753429}
   m_Layer: 5
-  m_Name: EnterButton
+  m_Name: ButtonEnter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,7 +206,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 46753427}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336683391}
+        m_TargetAssemblyTypeName: EnterText, Assembly-CSharp
+        m_MethodName: AddToBookList
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1336683390}
+        m_TargetAssemblyTypeName: TabManager, Assembly-CSharp
+        m_MethodName: CloseTab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &46753427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -246,18 +269,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 46753424}
   m_CullTransparentMesh: 1
---- !u!114 &46753429
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 46753424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 811d57f03c7af18418861b0f3e7a815c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &70332881
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +501,7 @@ Canvas:
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -648,6 +659,50 @@ MonoBehaviour:
   addBookTab: {fileID: 1336683386}
   speed: 30
   maxRayDistance: 10
+--- !u!1 &211217980
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 211217982}
+  - component: {fileID: 211217981}
+  m_Layer: 0
+  m_Name: BookList
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &211217981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211217980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d978efef9025845bd54ca4eca37b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &211217982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211217980}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &244512028
 GameObject:
   m_ObjectHideFlags: 0
@@ -870,7 +925,7 @@ GameObject:
   - component: {fileID: 416927554}
   - component: {fileID: 416927553}
   m_Layer: 5
-  m_Name: BookDate
+  m_Name: InputFieldDate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1046,7 +1101,7 @@ GameObject:
   - component: {fileID: 657963059}
   - component: {fileID: 657963058}
   m_Layer: 5
-  m_Name: BookAuthor
+  m_Name: InputFieldAuthor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1631,9 +1686,8 @@ GameObject:
   - component: {fileID: 1146280310}
   - component: {fileID: 1146280309}
   - component: {fileID: 1146280308}
-  - component: {fileID: 1146280311}
   m_Layer: 5
-  m_Name: CancelButton
+  m_Name: ButtonCancel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1703,7 +1757,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1146280309}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1336683390}
+        m_TargetAssemblyTypeName: TabManager, Assembly-CSharp
+        m_MethodName: CloseTab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1146280309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1742,18 +1808,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1146280306}
   m_CullTransparentMesh: 1
---- !u!114 &1146280311
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1146280306}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ef7afb8bc1f7444c8daea3aa3649370, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1167437208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1922,6 +1976,7 @@ GameObject:
   - component: {fileID: 1336683389}
   - component: {fileID: 1336683388}
   - component: {fileID: 1336683390}
+  - component: {fileID: 1336683391}
   m_Layer: 5
   m_Name: AddBookTab
   m_TagString: Untagged
@@ -2005,6 +2060,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b86398bbd9def41a85bda1d9d45421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1336683391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336683386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ba4a9b3321b254bbfd4534542bfcae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputFields:
+  - {fileID: 1652220323}
+  - {fileID: 657963058}
+  - {fileID: 1482974152}
+  - {fileID: 416927553}
+  bookList: {fileID: 211217981}
 --- !u!1 &1369561147
 GameObject:
   m_ObjectHideFlags: 0
@@ -2251,7 +2324,7 @@ GameObject:
   - component: {fileID: 1482974153}
   - component: {fileID: 1482974152}
   m_Layer: 5
-  m_Name: BookPublisher
+  m_Name: InputFieldPublisher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2733,7 +2806,7 @@ GameObject:
   - component: {fileID: 1652220324}
   - component: {fileID: 1652220323}
   m_Layer: 5
-  m_Name: BookTitle
+  m_Name: InputFieldTitle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
