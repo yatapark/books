@@ -6,14 +6,20 @@ public class TabManager : MonoBehaviour
 {
     private GameManager gameManager;
 
-    private void Start()
+    // if player push ESC, close tab and gameActivate
+    private void Update()
     {
-        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            CloseTab();
+            gameManager.SetGameActive(true);
+        }
     }
 
     // When open new tab, we set gameActive to false
     public void OpenTab()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gameObject.SetActive(true);
         gameManager.SetGameActive(false);
     }
@@ -21,6 +27,7 @@ public class TabManager : MonoBehaviour
     // When close current tab, we set gameActive to true
     public void CloseTab()
     {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
         gameObject.SetActive(false);
         gameManager.SetGameActive(true);
     }

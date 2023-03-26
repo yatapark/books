@@ -8,10 +8,25 @@ public class PlayerController : MonoBehaviour
     private Rigidbody playerRb;
     private GameManager gameManager;
 
-    public GameObject addBookTab;
+    public GameObject bookShelfTab;
 
     public float speed = 20.0f;
     public float maxRayDistance = 10.0f;
+
+    // Casting ray to check what is front of player
+    private void CheckFront()
+    {
+        RaycastHit hit;
+        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxRayDistance);
+        if (hit.collider != null)
+        {
+            bookShelfTab.GetComponent<TabManager>().OpenTab();
+        }
+        else
+        {
+            Debug.Log("nothing");
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,28 +41,12 @@ public class PlayerController : MonoBehaviour
         if (gameManager.GetGameActive())
         {
             Vector3 m_Input = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-            playerRb.MovePosition(transform.position + m_Input * speed * Time.deltaTime);
+            playerRb.MovePosition(transform.position + m_Input.normalized * speed * Time.deltaTime);
 
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(1))
             {
                 CheckFront();
             }
-        }
-    }
-
-    // Casting ray to check what is front of player
-    private void CheckFront()
-    {
-        RaycastHit hit;
-        Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, maxRayDistance);
-        if (hit.collider != null)
-        {
-            gameManager.SetGameActive(false);
-            addBookTab.SetActive(true);
-        }
-        else
-        {
-            Debug.Log("nothing");
         }
     }
 }
